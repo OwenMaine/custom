@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Speed Creations Inc. - Precision. Power. Personality.</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header" x-data="{ open: false }">
+        <div class="container">
+            <a href="index.html" class="logo">CSC<span class="accent">inc</span></a>
+            <nav class="main-nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="hamburger" @click="open = !open" :aria-expanded="open">
+                <i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i>
+            </button>
+        </div>
+        <div class="mobile-nav" x-show="open" @click.away="open = false" x-transition>
+            <a href="index.html">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="video-background">
+            <video autoplay loop muted playsinline poster="images/hero-poster.jpg">
+                <source src="images/hero-video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="particle-overlay"></div>
+        <div class="hero-content text-center wow animate__animated animate__fadeInUp">
+            <h1 class="hero-title">Precision. Power. Personality.</h1>
+            <h2 class="hero-subtitle">Built to Break Necks.</h2>
+            <a href="#contact" class="cta-button">Start Your Custom Build</a>
+        </div>
+    </section>
+
+    <main>
+        <section id="services" class="what-we-build text-center">
+            <div class="container">
+                <h2 class="section-title wow animate__animated animate__fadeIn">What We Build</h2>
+                <div class="service-cards">
+                    <div class="service-card wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                        <i class="fas fa-paint-roller"></i>
+                        <h3>Custom Paint & Bodywork</h3>
+                        <p>One-of-a-kind finishes and aggressive body modifications that demand attention.</p>
+                    </div>
+                    <div class="service-card wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Tuned Engines & Performance</h3>
+                        <p>Unleash the beast with our precision engine tuning, exhausts, and power upgrades.</p>
+                    </div>
+                    <div class="service-card wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+                        <i class="fas fa-car-side"></i>
+                        <h3>Bespoke Interiors</h3>
+                        <p>From luxurious leather to race-inspired cockpits, we craft interiors that fit your style.</p>
+                    </div>
+                    <div class="service-card wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">
+                        <i class="fas fa-volume-up"></i>
+                        <h3>Pro Audio Systems</h3>
+                        <p>Crystal-clear sound systems engineered to make a statement, inside and out.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="before-after-gallery">
+            <div class="container text-center">
+                <h2 class="section-title wow animate__animated animate__fadeIn">Transformations</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item wow animate__animated animate__zoomIn">
+                        <div class="image-container">
+                            <img src="images/1.jpg" alt="Stock vehicle" class="before">
+                            <img src="images/2.jpg" alt="Fully customized vehicle" class="after">
+                        </div>
+                        <div class="caption">Project: Midnight Ghost</div>
+                    </div>
+                    <div class="gallery-item wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
+                        <div class="image-container">
+                            <img src="images/3.jpg" alt="Stock vehicle" class="before">
+                            <img src="images/4.jpg" alt="Fully customized vehicle" class="after">
+                        </div>
+                        <div class="caption">Project: Cyan Fury</div>
+                    </div>
+                    <div class="gallery-item wow animate__animated animate__zoomIn" data-wow-delay="0.4s">
+                        <div class="image-container">
+                            <img src="images/5.jpg" alt="Stock vehicle" class="before">
+                            <img src="images/6.jpg" alt="Fully customized vehicle" class="after">
+                        </div>
+                         <div class="caption">Project: Redline Beast</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="miami-vibe-callout text-center">
+            <div class="container wow animate__animated animate__fadeIn">
+                <h2 class="callout-title">Where Street Meets Craft</h2>
+                <p>We blend raw Miami style with precision engineering. It's not just about looks—it's about building a machine that feels as good as it looks.</p>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container text-center">
+                <h2 class="section-title wow animate__animated animate__fadeIn">What Our Clients Say</h2>
+                <div class="testimonial-carousel">
+                     <div class="testimonial-item wow animate__animated animate__fadeInUp">
+                        <img src="images/client1.jpg" alt="Client Testimonial Car" class="testimonial-car">
+                        <blockquote>"CSC turned my vision into a reality that exceeded every expectation. The craftsmanship is insane. True artists of the automotive world."</blockquote>
+                        <cite>— Alex R. | Miami, FL</cite>
+                    </div>
+                     <div class="testimonial-item wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                        <img src="images/client2.jpg" alt="Client Testimonial Car" class="testimonial-car">
+                        <blockquote>"The attention to detail is just next level. From the engine tune to the custom interior, my car is now a one-of-a-kind masterpiece."</blockquote>
+                        <cite>— Jessica P. | Fort Lauderdale, FL</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-strip">
+            <div class="container">
+                <div class="cta-strip-content">
+                    <h3 class="wow animate__animated animate__fadeInLeft">Ready to build your dream ride?</h3>
+                    <a href="tel:3053166210" class="wow animate__animated animate__fadeInRight">Call Us: (305) 316-6210</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Custom Speed Creations Inc.</h4>
+                    <p>18659 SW 105th Pl, Cutler Bay, FL 33157</p>
+                    <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="footer-section">
+                     <h4>Contact Us</h4>
+                    <p><a href="tel:3053166210">Phone: (305) 316-6210</a></p>
+                    <p><a href="mailto:builds@customspeedcreations.com">Email: builds@customspeedcreations.com</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow The Build</h4>
+                    <div class="social-icons">
+                        
+                    </div>
+                </div>
+            </div>
+             <div class="footer-bottom">
+                &copy; <span id="year"></span> Custom Speed Creations Inc. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

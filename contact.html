@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Custom Speed Creations Inc.</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header" x-data="{ open: false }">
+        <div class="container">
+            <a href="index.html" class="logo">CSC<span class="accent">inc</span></a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+            <button class="hamburger" @click="open = !open" :aria-expanded="open">
+                <i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i>
+            </button>
+        </div>
+        <div class="mobile-nav" x-show="open" @click.away="open = false" x-transition>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <main class="contact-page-main">
+        <div class="container">
+            <h2 class="section-title text-center wow animate__animated animate__fadeIn">Get In Touch</h2>
+            <p class="section-subtitle text-center wow animate__animated animate__fadeInUp">Ready to start your build? Send us a message or visit the shop.</p>
+
+            <div class="contact-grid">
+                <div class="contact-form-container wow animate__animated animate__fadeInLeft">
+                    <form action="#" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Tell us about your project..." rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button form-submit-button">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info-container wow animate__animated animate__fadeInRight">
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>18659 SW 105th Pl, Cutler Bay, FL 33157</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+13053166210">(305) 316-6210</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday - Sunday: Closed</p>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <h4>Follow The Build</h4>
+                        <div class="social-icons">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="map-container wow animate__animated animate__fadeInUp">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.3413767429224!2d-80.36558762494718!3d25.593570177457934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9c47777cb70cb%3A0x7a555f1379bee980!2s18659%20SW%20105th%20Pl%2C%20Cutler%20Bay%2C%20FL%2033157%2C%20USA!5e0!3m2!1sen!2sng!4v1751663076041!5m2!1sen!2sng" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact-footer" class="main-footer">
+       <div class="container">
+         <div class="footer-bottom">
+            &copy; <span id="year"></span> Custom Speed Creations Inc. All Rights Reserved.
+        </div>
+       </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

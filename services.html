@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Custom Speed Creations Inc.</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header" x-data="{ open: false }">
+        <div class="container">
+            <a href="index.html" class="logo">CSC<span class="accent">inc</span></a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="hamburger" @click="open = !open" :aria-expanded="open">
+                <i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i>
+            </button>
+        </div>
+        <div class="mobile-nav" x-show="open" @click.away="open = false" x-transition>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="services.html">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <main class="services-page-main">
+        <div class="container">
+            <h2 class="section-title text-center wow animate__animated animate__fadeIn">Our Capabilities</h2>
+            <p class="section-subtitle text-center wow animate__animated animate__fadeInUp">From minor tweaks to full-scale transformations, we engineer every detail to perfection.</p>
+
+            <div class="accordion-container" x-data="{ openService: 1 }">
+                <div class="accordion-item wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                    <div class="accordion-header" @click="openService = (openService === 1 ? null : 1)">
+                        <div class="header-content">
+                            <i class="fas fa-cogs"></i>
+                            <h3>Performance Upgrades</h3>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon" :class="{'rotate-180': openService === 1}"></i>
+                    </div>
+                    <div class="accordion-content" x-show="openService === 1" x-collapse>
+                        <p>Unlock the true potential of your vehicle. Our performance tuning is a science, focused on maximizing power, responsiveness, and reliability.</p>
+                        <ul>
+                            <li>ECU & TCU Tuning</li>
+                            <li>Turbocharger & Supercharger Installations</li>
+                            <li>Custom Exhaust Systems (Cat-back, Turbo-back)</li>
+                            <li>Upgraded Fuel Systems & Injectors</li>
+                            <li>Performance Suspension (Coilovers & Air Ride)</li>
+                            <li>Big Brake Kits & High-Performance Pads</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                    <div class="accordion-header" @click="openService = (openService === 2 ? null : 2)">
+                         <div class="header-content">
+                            <i class="fas fa-paint-roller"></i>
+                            <h3>Bodywork & Paint</h3>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon" :class="{'rotate-180': openService === 2}"></i>
+                    </div>
+                    <div class="accordion-content" x-show="openService === 2" x-collapse>
+                        <p>A flawless finish is our signature. We go beyond simple paint jobs to offer complete aesthetic overhauls that make your vehicle truly one-of-a-kind.</p>
+                        <ul>
+                            <li>Custom Color & Show-Car Finishes</li>
+                            <li>Widebody Kit Installation & Molding</li>
+                            <li>Paint Protection Film (PPF) & Ceramic Coating</li>
+                            <li>Carbon Fiber Components (Hoods, Spoilers, Diffusers)</li>
+                            <li>Headlight & Taillight Customization</li>
+                            <li>Body Panel Restoration & Dent Repair</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                    <div class="accordion-header" @click="openService = (openService === 3 ? null : 3)">
+                         <div class="header-content">
+                            <i class="fas fa-car-side"></i>
+                            <h3>Bespoke Interiors</h3>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon" :class="{'rotate-180': openService === 3}"></i>
+                    </div>
+                    <div class="accordion-content" x-show="openService === 3" x-collapse>
+                        <p>Your vehicle's cockpit, reimagined. We craft immersive interiors that blend luxury, technology, and personal style.</p>
+                        <ul>
+                            <li>Full Leather Reupholstery (Seats, Dash, Doors)</li>
+                            <li>Custom Steering Wheels (Carbon Fiber & Alcantara)</li>
+                            <li>Starlight Headliners</li>
+                            <li>Upgraded Audio & Infotainment Systems</li>
+                            <li>Custom Dash Kits & Trim</li>
+                            <li>Sound Deadening & Insulation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <div class="accordion-item wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                    <div class="accordion-header" @click="openService = (openService === 4 ? null : 4)">
+                         <div class="header-content">
+                            <i class="fas fa-star"></i>
+                            <h3>Full Vehicle Personalization</h3>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon" :class="{'rotate-180': openService === 4}"></i>
+                    </div>
+                    <div class="accordion-content" x-show="openService === 4" x-collapse>
+                        <p>This is our premier offering—a complete, ground-up transformation. We work with you to design and execute a cohesive build where every element works in harmony, from the engine bay to the interior stitching.</p>
+                        <ul>
+                            <li>Initial Concept & 3D Rendering</li>
+                            <li>Complete Project Management</li>
+                            <li>Sourcing of Rare & High-End Parts</li>
+                            <li>Coordination of All Services (Engine, Body, Interior, Audio)</li>
+                            <li>Final Detailing & Photoshoot</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-page-cta text-center wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+                <h3>Have a Project in Mind?</h3>
+                <p>Let's discuss how we can bring your vision to life.</p>
+                <a href="#contact" class="cta-button">Get a Quote</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="contact" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Custom Speed Creations Inc.</h4>
+                    <p>18659 SW 105th Pl, Cutler Bay, FL 33157</p>
+                    <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="footer-section">
+                     <h4>Contact Us</h4>
+                    <p><a href="tel:3053166210">Phone: (305) 316-6210</a></p>
+                    <p><a href="mailto:builds@customspeedcreations.com">Email: builds@customspeedcreations.com</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow The Build</h4>
+                    <div class="social-icons">
+                        
+                    </div>
+                </div>
+            </div>
+             <div class="footer-bottom">
+                &copy; <span id="year"></span> Custom Speed Creations Inc. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

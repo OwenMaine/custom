@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Custom Speed Creations Inc.</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header" x-data="{ open: false }">
+        <div class="container">
+            <a href="index.html" class="logo">CSC<span class="accent">inc</span></a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="hamburger" @click="open = !open" :aria-expanded="open">
+                <i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i>
+            </button>
+        </div>
+        <div class="mobile-nav" x-show="open" @click.away="open = false" x-transition>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <main class="gallery-page-main">
+        <div class="container text-center">
+            <h2 class="section-title wow animate__animated animate__fadeIn">Our Work</h2>
+            
+            <div x-data="{ activeFilter: 'all' }">
+                <div class="filter-buttons wow animate__animated animate__fadeInUp">
+                    <button class="filter-btn" :class="{ 'active': activeFilter === 'all' }" @click="activeFilter = 'all'">All</button>
+                    <button class="filter-btn" :class="{ 'active': activeFilter === 'paint' }" @click="activeFilter = 'paint'">Paint</button>
+                    <button class="filter-btn" :class="{ 'active': activeFilter === 'interior' }" @click="activeFilter = 'interior'">Interior</button>
+                    <button class="filter-btn" :class="{ 'active': activeFilter === 'audio' }" @click="activeFilter = 'audio'">Audio</button>
+                    <button class="filter-btn" :class="{ 'active': activeFilter === 'suspension' }" @click="activeFilter = 'suspension'">Suspension</button>
+                </div>
+
+                <div class="masonry-grid">
+                    <div class="gallery-grid-item" data-category="paint" x-show="activeFilter === 'all' || activeFilter === 'paint'" x-transition>
+                        <a href="images/7.jpg" data-lightbox="gallery" data-title="Gloss Red Finish with Carbon Accents">
+                            <img src="images/7.jpg" alt="Custom red paint job">
+                        </a>
+                    </div>
+                    <div class="gallery-grid-item" data-category="paint" x-show="activeFilter === 'all' || activeFilter === 'paint'" x-transition>
+                        <a href="images/8.jpg" data-lightbox="gallery" data-title="Two-Tone Cyan & Black Bodywork">
+                            <img src="images/8.jpg" alt="Custom cyan paint job">
+                        </a>
+                    </div>
+
+                    <div class="gallery-grid-item" data-category="interior" x-show="activeFilter === 'all' || activeFilter === 'interior'" x-transition>
+                        <a href="images/9.jpg" data-lightbox="gallery" data-title="Bespoke Diamond-Stitched Leather Seats">
+                           <img src="images/9.jpg" alt="Custom leather interior">
+                        </a>
+                    </div>
+                    <div class="gallery-grid-item" data-category="interior" x-show="activeFilter === 'all' || activeFilter === 'interior'" x-transition>
+                        <a href="images/10.jpg" data-lightbox="gallery" data-title="Race-Inspired Cockpit with Carbon Fiber Dash">
+                           <img src="images/10.jpg" alt="Custom racing interior">
+                        </a>
+                    </div>
+
+                    <div class="gallery-grid-item" data-category="audio" x-show="activeFilter === 'all' || activeFilter === 'audio'" x-transition>
+                        <a href="images/11.jpg" data-lightbox="gallery" data-title="Custom Trunk Audio & Lighting Setup">
+                            <img src="images/11.jpg" alt="Custom car audio system">
+                        </a>
+                    </div>
+
+                    <div class="gallery-grid-item" data-category="suspension" x-show="activeFilter === 'all' || activeFilter === 'suspension'" x-transition>
+                        <a href="images/12.jpg" data-lightbox="gallery" data-title="Air Ride Suspension - Slammed Stance">
+                            <img src="images/12.jpg" alt="Air suspension system">
+                        </a>
+                    </div>
+
+                     <div class="gallery-grid-item" data-category="paint" x-show="activeFilter === 'all' || activeFilter === 'paint'" x-transition>
+                        <a href="images/4.jpg" data-lightbox="gallery" data-title="Aggressive Widebody Kit & Paint">
+                            <img src="images/4.jpg" alt="Widebody car">
+                        </a>
+                    </div>
+                    <div class="gallery-grid-item" data-category="suspension" x-show="activeFilter === 'all' || activeFilter === 'suspension'" x-transition>
+                        <a href="images/6.jpg" data-lightbox="gallery" data-title="Performance Coilover Installation">
+                            <img src="images/6.jpg" alt="Custom wheel fitment">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Custom Speed Creations Inc.</h4>
+                    <p>18659 SW 105th Pl, Cutler Bay, FL 33157</p>
+                    <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="footer-section">
+                     <h4>Contact Us</h4>
+                    <p><a href="tel:3053166210">Phone: (305) 316-6210</a></p>
+                    <p><a href="mailto:builds@customspeedcreations.com">Email: builds@customspeedcreations.com</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow The Build</h4>
+                    <div class="social-icons">
+                        
+                    </div>
+                </div>
+            </div>
+             <div class="footer-bottom">
+                &copy; <span id="year"></span> Custom Speed Creations Inc. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
