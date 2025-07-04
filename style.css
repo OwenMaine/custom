@@ -1058,7 +1058,7 @@ h1, h2, h3, h4 {
 }
 
 /* Footer on Contact Page */
-#contact-footer {
+contact.html-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     background: var(--background-dark); /* Match page background */
     padding: 20px 0;
